@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсовий проєкт</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="mainWindow">
+        <div class="container">
+                <input id="tab-1" type="radio" value="whenHoliday" name="form" checked>
+                <label for="tab-1"><p>Скільки чекати між святами</p></label>
+                <input id="tab-2" type="radio" value="countHolidays" name="form">
+                <label for="tab-2"><p>Скільки всього свят</p></label>            
+            <div class="firstTab">
+                <div class="dates">
+                    <label for="startDate">Оберіть дату від:</label>
+                    <input id="startDate" type="date" name="dateFrom" onchange="setMinEndDate()">
+                    <label for="endDate">Оберіть дату до:</label>
+                    <input id="endDate" type="date" name="dateTo" min="" disabled>
+                </div>
+                <h4>Оберіть період, якщо треба</h4>
+                <div class="periods">
+                    <label for="period7">7 днів</label>
+                    <input id="period7" type="radio" name="period" value="7">
+                    <label for="period30">30 днів</label>
+                    <input id="period30" type="radio" name="period" value="30">
+                </div>
+                <div class="days">
+                    <label for="daysAll">Всі дні</label>
+                    <input id="daysAll" type="radio" name="days" value="all" checked>
+                    <label for="daysWork">Будні дні</label>
+                    <input id="daysWork" type="radio" name="days" value="work">
+                    <label for="daysHoliday">Вихідні дні</label>
+                    <input id="daysHoliday" type="radio" name="days" value="holiday">
+                </div>
+                <div class="buttons">
+                    <button id="calculateDaysBtn">Порахувати в днях</button>
+                    <button id="calculateHoursBtn">Порахувати в годинах</button>
+                    <button id="calculateMinutesBtn">Порахувати в хвилинах</button>
+                    <button id="calculateSecondsBtn">Порахувати в секундах</button>
+                </div>
+                <div class="result">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Початкова дата</th>
+                                <th>Кінцева дата</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="secondTab">
+                 <div class="choice">
+                    <select id="country"></select>
+                    <label for="year">Оберіть рік:</label>
+                    <select id="year"></select>
+                </div>
+                <button id="countHolidaysBtn">Порахувати свята</button>                
+                <div class="holidayResults">
+                    <table>
+                        <thead>
+                            <tr>                                
+                                <th>Дата <button id="sortDateBtn"><i class="fa fa-sort"></i></button></th>
+                                <th>Свята</th>
+                            </tr>
+                        </thead>
+                        <tbody id="holidayList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
